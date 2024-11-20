@@ -12,6 +12,7 @@ class IndexView(ListView):
     template_name = 'developer/index.html'
     context_object_name = 'developers'
 
+
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
         context['form'] = DeveloperForm 
