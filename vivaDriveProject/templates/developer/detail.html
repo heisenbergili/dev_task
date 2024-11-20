@@ -1,0 +1,12 @@
+{% extends "_base.html" %}
+{% block title %} Details - {{ developer.first_name }} {{ developer.last_name }} {% endblock title %}
+{% block content %}
+
+<h1>VivaDrive</h1>
+<h2>Details of {{ developer.first_name }}</h2>
+
+<p><Strong>first name : {{ developer.first_name }}</Strong></p>
+<p><Strong>last name : {{ developer.last_name }}</Strong></p>
+
+
+{% endblock content %}

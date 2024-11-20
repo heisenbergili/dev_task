@@ -1,0 +1,28 @@
+{% extends "_base.html" %}
+
+{% block title %} Developers list {% endblock title %}
+
+{% block content %}
+<h1>VivaDrive</h1>
+<h2>Developers list</h2>
+
+{% if developers %}
+<ul>
+    {% for dev in developers %}
+    <li><a href="{% url 'developer:detail' dev.id %}">{{ dev.first_name }}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p><strong>There's no student subscribed!</strong></p>
+{% endif %}
+
+<!-- form to add a new developer -->
+<form action="{% url 'developer:add' %}" method="post" class="ps-3">
+    {% csrf_token %}
+    {{ form.first_name }}
+    {{ form.last_name }}
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>
+
+
+{% endblock content %}
