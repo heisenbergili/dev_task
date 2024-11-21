@@ -1,0 +1,24 @@
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-dev-modal">
+    Add task
+</button>
+
+
+<div class="modal fade " id="add-dev-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">New task</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'task:create' %}" method="post">
+                    {% csrf_token %}
+                    {{ form }}
+                    <div>
+                        <button class="btn btn-primary" type="submit">Create a new task</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
