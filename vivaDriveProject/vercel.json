@@ -1,0 +1,13 @@
+{
+    "builds": [{
+        "src": "vivaDriveProject/wsgi.py",
+        "use": "@vercel/python",
+        "coonfig": { "maxLambdaSize": "15mb", "runtime": "python3.9"}
+    }],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "vivaDriveProject/wsgi.py"
+        }
+    ]
+}
